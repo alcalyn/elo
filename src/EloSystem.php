@@ -2,6 +2,8 @@
 
 namespace Alcalyn\Elo;
 
+use Alcalyn\Elo\Exception\EloCoefficientException;
+
 class EloSystem
 {
     /**

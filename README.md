@@ -95,9 +95,10 @@ Player **B** has **1500 Elo**, reliability **0.0**<br />
 **A** wins: Expected result,     so **B** loses a small amount of Elo, and **A** win nothing.<br />
 **B** wins: NOT expected result, so **B** wins a BIG amount of Elo, and **A** lose nothing.<br />
 
-*A* Elo score will not be updated when he play versus a new player with an unreliable Elo score.
+**A** Elo score will not be updated when he plays versus a new player with an unreliable Elo score.
 
-(*And new player* ***B*** *should have its Elo reliability increased by something like 1/10.*)
+(*And new player* ***B*** *should have its Elo reliability increased by something like 1/10
+after every games until his reliability reaches 1*)
 
 ``` php
 $elo = new EloSystem();

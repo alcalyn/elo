@@ -199,28 +199,28 @@ class EloSystemTest extends \PHPUnit_Framework_TestCase
     
     public function testCalculateEloThrowsExceptionOnWinMoreThan1()
     {
-        $this->setExpectedException('\Alcalyn\Elo\EloCoefficientException');
+        $this->setExpectedException('\Alcalyn\Elo\Exception\EloCoefficientException');
         $elo = new EloSystem();
         $elo->calculate(2042, 1458, 1.00001);
     }
     
     public function testCalculateEloThrowsExceptionOnWinLessThan0()
     {
-        $this->setExpectedException('\Alcalyn\Elo\EloCoefficientException');
+        $this->setExpectedException('\Alcalyn\Elo\Exception\EloCoefficientException');
         $elo = new EloSystem();
         $elo->calculate(2042, 1458, -0.00001);
     }
     
     public function testCalculateEloThrowsExceptionOnReliabilityMoreThan1()
     {
-        $this->setExpectedException('\Alcalyn\Elo\EloCoefficientException');
+        $this->setExpectedException('\Alcalyn\Elo\Exception\EloCoefficientException');
         $elo = new EloSystem();
         $elo->calculate(2042, 1458, 0.5, 1.00001, 1.00001);
     }
     
     public function testCalculateEloThrowsExceptionOnReliabilityLessThan0()
     {
-        $this->setExpectedException('\Alcalyn\Elo\EloCoefficientException');
+        $this->setExpectedException('\Alcalyn\Elo\Exception\EloCoefficientException');
         $elo = new EloSystem();
         $elo->calculate(2042, 1458, 0.0, -0.00001, 1.0);
     }

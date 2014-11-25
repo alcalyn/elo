@@ -1,6 +1,6 @@
 <?php
 
-namespace Alcalyn\Elo;
+namespace Alcalyn\Elo\Exception;
 
 class EloCoefficientException extends \Exception
 {
