@@ -8,7 +8,7 @@ class EloSystem
      * F Factor. Determines how quickly elo scores change.
      * Default is 16
      * 
-     * @var float
+     * @var integer
      */
     private $kFactor;
     
@@ -24,16 +24,16 @@ class EloSystem
      * Defines approximatively the power between intervals.
      * Default is 10
      * 
-     * @var float
+     * @var integer
      */
     private $pow;
     
     /**
      * Constructor
      * 
-     * @param float $kFactor
+     * @param integer $kFactor
      * @param integer $interval
-     * @param float $pow
+     * @param integer $pow
      */
     public function __construct($kFactor = 16, $interval = 400, $pow = 10)
     {
@@ -50,8 +50,8 @@ class EloSystem
      * @param float $win win coef for player 0. Set 1 to say that player 0 won
      * @param float $reliability0 elo reliability for player 0
      * @param float $reliability1 elo reliability for player 1
-     * @param float $kFactor0 override k factor for player 0
-     * @param float $kFactor1 override k factor for player 1
+     * @param integer $kFactor0 override k factor for player 0
+     * @param integer $kFactor1 override k factor for player 1
      * 
      * @return array with new elo score at indexes 0 and 1 for player 0 and 1
      */
@@ -143,6 +143,8 @@ class EloSystem
      * 
      * @param float $elo0
      * @param float $elo1
+     * @param integer $interval
+     * @param integer $pow
      * 
      * @return float
      */
@@ -158,10 +160,10 @@ class EloSystem
      * 
      * @return boolean
      */
-    private static function checkCoef($coef, $variableName = 'coefficient')
+    private static function checkCoef($coef, $variableName)
     {
         if (($coef < 0) || ($coef > 1)) {
-            throw new Exception($variableName.' must be in range [0;1]');
+            throw new EloCoefficientException($coef, $variableName);
         }
     }
 }
