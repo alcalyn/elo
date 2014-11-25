@@ -103,9 +103,9 @@ class EloSystem
      * 
      * @return double[] with new elo score at indexes 0 and 1 for player 0 and 1
      */
-    public function win($elo0, $elo1, $reliability0 = 1, $reliability1 = 1)
+    public function win($elo0, $elo1, $reliability0 = 1, $reliability1 = 1, $kFactor0 = null, $kFactor1 = null)
     {
-        return $this->calculate($elo0, $elo1, 1, $reliability0, $reliability1);
+        return $this->calculate($elo0, $elo1, 1, $reliability0, $reliability1, $kFactor0, $kFactor1);
     }
     
     /**
@@ -118,9 +118,9 @@ class EloSystem
      * 
      * @return double[] with new elo score at indexes 0 and 1 for player 0 and 1
      */
-    public function lose($elo0, $elo1, $reliability0 = 1, $reliability1 = 1)
+    public function lose($elo0, $elo1, $reliability0 = 1, $reliability1 = 1, $kFactor0 = null, $kFactor1 = null)
     {
-        return $this->calculate($elo0, $elo1, 0, $reliability0, $reliability1);
+        return $this->calculate($elo0, $elo1, 0, $reliability0, $reliability1, $kFactor0, $kFactor1);
     }
     
     /**
@@ -133,9 +133,9 @@ class EloSystem
      * 
      * @return double[] with new elo score at indexes 0 and 1 for player 0 and 1
      */
-    public function draw($elo0, $elo1, $reliability0 = 1, $reliability1 = 1)
+    public function draw($elo0, $elo1, $reliability0 = 1, $reliability1 = 1, $kFactor0 = null, $kFactor1 = null)
     {
-        return $this->calculate($elo0, $elo1, 0.5, $reliability0, $reliability1);
+        return $this->calculate($elo0, $elo1, 0.5, $reliability0, $reliability1, $kFactor0, $kFactor1);
     }
     
     /**
