@@ -67,7 +67,7 @@ class EloSystem
         /**
          * Calculate probability 0 have to beat 1
          */
-        $proba = self::proba($elo0, $elo1, $this->interval, $this->pow);
+        $proba = $this->proba($elo0, $elo1);
         
         /**
          * Calculate elo changement
@@ -143,14 +143,12 @@ class EloSystem
      * 
      * @param double $elo0
      * @param double $elo1
-     * @param integer $interval
-     * @param integer $pow
      * 
      * @return double
      */
-    public static function proba($elo0, $elo1, $interval = 400, $pow = 10)
+    public function proba($elo0, $elo1)
     {
-        return 1 / (1 + pow($pow, ($elo1 - $elo0) / $interval)) ;
+        return 1 / (1 + pow($this->pow, ($elo1 - $elo0) / $this->interval)) ;
     }
     
     /**
