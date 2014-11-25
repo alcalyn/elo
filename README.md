@@ -1,7 +1,7 @@
 Elo system
 ==========
 
-Another Elo implementation in PHP ! But this one introduce a "reliability" purpose.
+Another **Elo** implementation in **PHP** ! But this one introduce a **reliability** purpose.
 
 
 ## Reliability purpose
@@ -11,7 +11,7 @@ A new player **B** subscribe to the game website, so his Elo score is initialize
 But in fact, he is a very good player, better than **A**, and beat him like crushing an ant.
 
 **The problem**: New player **B** will win many Elo because he won against a **2100 Elo** player. That's ok.
-But player **A** (**2100 Elo**) will loss many Elo because he lost against a **1500 Elo** player, but in fact strongest.
+But player **A** (**2100 Elo**) will lose many Elo because he lost against a **1500 Elo** player, but in fact strongest.
 
 The fact is that the **new player Elo score is not reliable**, so it should not impact others players Elo scores.
 
