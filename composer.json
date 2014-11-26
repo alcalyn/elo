@@ -1,0 +1,17 @@
+{
+    "name": "alcalyn/elo",
+    "license": "MIT",
+    "type": "library",
+    "description": "Elo system with a reliability purpose",
+    "homepage": "https://github.com/alcalyn/elo",
+    "keywords": ["php", "elo"],
+    "authors": [
+        {
+            "name": "Julien Maulny",
+            "email": "doubjulien@hotmail.fr"
+        }
+    ],
+    "autoload": {
+        "psr-0": { "Alcalyn\\Elo": "src/" }
+    }
+}
