@@ -3,6 +3,10 @@ Elo system
 
 Another **Elo** implementation in **PHP** ! But this one introduce a **reliability** purpose.
 
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/alcalyn/elo/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/alcalyn/elo/?branch=master)
+[![Build Status](https://travis-ci.org/alcalyn/elo.svg?branch=master)](https://travis-ci.org/alcalyn/elo)
+[![License](https://poser.pugx.org/alcalyn/elo/license.svg)](https://packagist.org/packages/alcalyn/elo)
+
 
 ## Reliability purpose
 
@@ -16,6 +20,21 @@ But player **A** (**2100 Elo**) will lose many Elo because he lost against a **1
 The fact is that the **new player Elo score is not reliable**, so it should not impact others players Elo scores.
 
 **The solution**: This library. It introduces a **reliability coefficient** (decimal between 0.0 and 1.0) for Elo A and Elo B.
+
+
+## Composer
+
+Install via composer
+
+``` js
+{
+    "require": {
+        "alcalyn/elo": "1.x"
+    }
+}
+```
+
+*Or download the library manually if you don't use composer.*
 
 
 ## Usage
