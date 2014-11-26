@@ -81,10 +81,7 @@ class EloSystem
          * Calculate local reliability to avoid 0 and 0 reliability for new players
          * (if two new players have 0 and 0.1 reliability, they are rectified to 0.9 and 1)
          */
-        $reliabilityRectification = 1 - max($reliability0, $reliability1);
-        
-        $reliability0 = $reliability0 + $reliabilityRectification;
-        $reliability1 = $reliability1 + $reliabilityRectification;
+        self::rectifyReliabilityCoefs($reliability0, $reliability1);
         
         /**
          * Apply coefs K-factor and reliability of each other
@@ -151,6 +148,20 @@ class EloSystem
     public function proba($elo0, $elo1)
     {
         return 1 / (1 + pow($this->pow, ($elo1 - $elo0) / $this->interval)) ;
+    }
+    
+    /**
+     * Increase coefficients the same value so one of them reaches 1
+     * 
+     * @param double $coef0
+     * @param double $coef1
+     */
+    private static function rectifyReliabilityCoefs(&$coef0, &$coef1)
+    {
+        $reliabilityRectification = 1 - max($coef0, $coef1);
+        
+        $coef0 += $reliabilityRectification;
+        $coef1 += $reliabilityRectification;
     }
     
     /**
