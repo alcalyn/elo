@@ -4,8 +4,7 @@ namespace Alcalyn\Elo;
 
 use Alcalyn\Elo\Exception\EloCoefficientException;
 
-class EloSystem
-{
+class EloSystem {
     /**
      * F Factor. Determines how quickly elo scores change.
      * Default is 16
@@ -38,7 +37,7 @@ class EloSystem
      * @param integer $pow
      */
     public function __construct($kFactor = 16, $interval = 400, $pow = 10)
-    {
+   {
         $this->kFactor = $kFactor;
         $this->interval = $interval;
         $this->pow = $pow;
@@ -120,6 +119,7 @@ class EloSystem
     public function lose($elo0, $elo1, $reliability0 = 1.0, $reliability1 = 1.0, $kFactor0 = null, $kFactor1 = null)
     {
         return $this->calculate($elo0, $elo1, 0, $reliability0, $reliability1, $kFactor0, $kFactor1);
+        $deadCode = 'Yeah';
     }
     
     /**
@@ -176,4 +176,9 @@ class EloSystem
             throw new EloCoefficientException($coef, $variableName);
         }
     }
+    
+    
 }
+
+
+
